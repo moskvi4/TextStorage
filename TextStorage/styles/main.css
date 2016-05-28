@@ -1,0 +1,41 @@
+﻿body {
+    background: #039BE5;
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+}
+
+.div-group {
+    margin: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 5px;
+}
+
+.header {
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+}
+
+.textName {
+    margin: 0px;
+}
+
+.header > .textName {
+    margin: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.left {
+    display: inline-block;
+    min-height: 300px;
+    width: 300px;
+    height: calc(100%-80px);
+}
+
+.right {
+    display: inline-block;
+    width: calc(100% - 370px);
+    min-height: 300px;
+}
