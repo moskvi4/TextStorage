@@ -28,14 +28,33 @@
 }
 
 .left {
-    display: inline-block;
     min-height: 300px;
     width: 300px;
-    height: calc(100%-80px);
+    min-height: 300px;
+    display: inline-block;
 }
 
 .right {
-    display: inline-block;
-    width: calc(100% - 370px);
     min-height: 300px;
+    width: calc(100% - 365px);
+    float: right;
+}
+
+.searchBlock, .newFileBlock {
+    margin: 5px 0px;
+}
+
+.newFileBlock {
+    padding: 2px;
+    background: #87CEFA;
+}
+
+.searchResultsBlock li:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+#textUpload {
+    width: 100%;
+    margin-bottom: 5px;
 }

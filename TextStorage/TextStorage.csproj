@@ -136,6 +136,7 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\libs\jquery-1.12.4.min.js" />
+    <Content Include="scripts\script.js" />
     <Content Include="styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>

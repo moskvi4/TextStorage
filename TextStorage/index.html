@@ -4,6 +4,7 @@
     <title>Text Storage</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <script src="scripts/libs/jquery-1.12.4.min.js"></script>
+    <script src="scripts/script.js"></script>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -12,7 +13,29 @@
             Text Storage
         </p>
     </div>
-    <div class="left div-group"></div>
-    <div class="right div-group"></div>
+    <div class="left div-group">        
+        <div class="newFileBlock">
+            <input type="file" id="textUpload" />
+            <label>
+                Text name:
+                <input name="newTextName" id="newTextName" />
+                <button name="loadNewText" id="loadNewTextButton">Upload</button>
+            </label>
+        </div>
+        <div class="searchBlock">
+            <label>
+                Text name:
+                <input name="textName" id="textName" />
+                <button name="searchTextNutton" id="searchTextButton">Search</button>
+            </label>
+        </div>
+        <div class="searchResultsBlock">
+            <ul id="searchResultsList" style="list-style-type:none"></ul>
+        </div>
+    </div>
+    <div class="right div-group">
+        <p class="textContent" id="textContent">
+        </p>
+    </div>
 </body>
 </html>

@@ -1,7 +1,9 @@
 ﻿using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.OData;
 using TextStorage.Models;
@@ -27,17 +29,24 @@ namespace TextStorage.Controllers
         }
 
         // POST: odata/Texts
-        public async Task<IHttpActionResult> Post(Text text)
+        public async Task<IHttpActionResult> Post()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var file = HttpContext.Current.Request.Files["UploadedText"];
+            var fileName = HttpContext.Current.Request["UploadedTextName"];
 
-            db.Texts.Add(text);
+            var streamReader = new StreamReader(file.InputStream);
+            var textContent = streamReader.ReadToEnd();
+
+            var newText = new Text()
+            {
+                Name = fileName,
+                TextContent = textContent
+            };
+
+            db.Texts.Add(newText);
             await db.SaveChangesAsync();
 
-            return Created(text);
+            return Ok();
         }
 
         // DELETE: odata/Texts(5)
