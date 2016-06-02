@@ -139,6 +139,8 @@
     <Content Include="scripts\libs\jquery-1.12.4.min.js" />
     <Content Include="scripts\script.js" />
     <Content Include="styles\main.css" />
+    <Content Include="Texts\Математика.txt" />
+    <Content Include="Texts\Наука.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
