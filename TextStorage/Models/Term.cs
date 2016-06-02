@@ -6,6 +6,7 @@ namespace TextStorage.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string StemmedName { get; set; }
 
         public virtual ICollection<TermDescription> Descriptions { get; set; }
 

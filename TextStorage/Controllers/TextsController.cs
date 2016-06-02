@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.OData;
 using TextStorage.Models;
+using TextStorage.TermSearcher;
 
 namespace TextStorage.Controllers
 {
@@ -40,11 +41,18 @@ namespace TextStorage.Controllers
             var newText = new Text()
             {
                 Name = fileName,
-                TextContent = textContent
+                TextContent = textContent,
+                TextContentOriginal = textContent
             };
 
-            db.Texts.Add(newText);
+            newText = db.Texts.Add(newText);
             await db.SaveChangesAsync();
+
+            var newTerms = await RegexpSearcher.SaveTerms(newText, db);
+            if (newTerms > 0)
+            {
+                //TermsUtils.ApplyTerms(db);
+            }
 
             return Ok();
         }

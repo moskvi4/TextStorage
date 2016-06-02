@@ -154,6 +154,9 @@
     <Compile Include="Models\Text.cs" />
     <Compile Include="Models\TextStorageContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TermSearcher\RegexpSearcher.cs" />
+    <Compile Include="TermSearcher\Stemmer.cs" />
+    <Compile Include="TermSearcher\TermsUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
