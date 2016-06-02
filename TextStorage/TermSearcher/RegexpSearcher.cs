@@ -7,8 +7,9 @@ namespace TextStorage.TermSearcher
 {
     public class RegexpSearcher
     {
-        const string REG_EXP_SENTENSE = @"\.*\s*[А-Я][а-яА-Яа́і́е́о́у́\s]+\s*(\([^\)]*\))?\s+([—])\s[^\.\n]*[\.\n]\s*";
-        const string REG_EXP_TERM = @"[А-Я][а-яА-Яа́і́е́о́у́\s]+";
+        const string REG_EXP_SENTENSE = @"\.*\s*[А-Я][а-яА-Я́\s]+\s*(\([^\)]*\))?\s+([—])\s[^\.\n]*[\.\n]\s*";
+        const string REG_EXP_TERM = @"[А-Я][а-яА-Я́\s]+";
+        //тут є "Знак ударения" з кодом 769
 
         public static async Task<int> SaveTerms(Text textEntity, TextStorageContext dbContext)
         {

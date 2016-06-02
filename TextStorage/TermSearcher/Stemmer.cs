@@ -17,9 +17,9 @@ namespace TextStorage.TermSearcher
                 .Replace("о", string.Empty)
                 .Replace("у", string.Empty)
                 .Replace("ю", string.Empty)
-                .Replace("́", string.Empty)
-                .Replace("я", string.Empty).ToString();
-
+                .Replace("́", string.Empty)//це не пусте, тут є "Знак ударения" з кодом 769
+                .Replace("я", string.Empty)
+                .ToString();
         }
     }
 }
