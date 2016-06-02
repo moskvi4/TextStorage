@@ -21,7 +21,7 @@ namespace TextStorage.TermSearcher
                 var termMatch = Regex.Match(value, REG_EXP_TERM, RegexOptions.CultureInvariant);
                 var term = termMatch.Value.Trim();
                 var termStemmed = Stemmer.Stem(term);
-                if (termStemmed.Length <= 2) continue;
+                if (term.Length <= 3) continue; //назва терміну закоротка
                 var termEntity = dbContext.Terms.Where(e => e.StemmedName == termStemmed).FirstOrDefault();
                 if (termEntity == null)
                     termEntity = dbContext.Terms.Add(new Term()
