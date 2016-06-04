@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Iveonik.Stemmers;
+using System;
+using System.Linq;
 
 namespace TextStorage.TermSearcher
 {
@@ -6,20 +8,11 @@ namespace TextStorage.TermSearcher
     {
         public static string Stem(string s)
         {
-            var sb = new StringBuilder(s.ToLower().Trim());
-            return sb
-                .Replace("а", string.Empty)
-                .Replace("е", string.Empty)
-                .Replace("є", string.Empty)
-                .Replace("и", string.Empty)
-                .Replace("і", string.Empty)
-                .Replace("ї", string.Empty)
-                .Replace("о", string.Empty)
-                .Replace("у", string.Empty)
-                .Replace("ю", string.Empty)
-                .Replace("́", string.Empty)//це не пусте, тут є "Знак ударения" з кодом 769
-                .Replace("я", string.Empty)
-                .ToString();
+            var stemmer = new RussianStemmer();
+            var result = s.Replace("́", string.Empty)
+                .Split(new char[]{ ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(t => stemmer.Stem(t));
+            return string.Join(" ", result);
         }
     }
 }
