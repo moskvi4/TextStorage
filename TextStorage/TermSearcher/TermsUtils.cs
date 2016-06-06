@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using TextStorage.Models;
 
 namespace TextStorage.TermSearcher
@@ -12,6 +13,12 @@ namespace TextStorage.TermSearcher
                 Id = t.Id,
                 StemmedName = t.StemmedName
             }).ToList();
+            var maxWordsInTerm = terms.Max(t => t.StemmedName.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries).Length);
+            foreach (var text in dbContext.Texts)
+            {
+                
+            }
         }
     }
 }
