@@ -9,8 +9,9 @@ namespace TextStorage.TermSearcher
         public static string Stem(string s)
         {
             var stemmer = new RussianStemmer();
+            var separators = new char[] { ' ', '\t', '\r' };
             var result = s.Replace("́", string.Empty)
-                .Split(new char[]{ ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Split(separators, StringSplitOptions.RemoveEmptyEntries)
                 .Select(t => stemmer.Stem(t));
             return string.Join(" ", result);
         }

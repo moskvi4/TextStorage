@@ -46,7 +46,6 @@
             return;
         }
 
-        // Make Ajax request with the contentType = false, and procesDate = false
         var ajaxRequest = $.ajax({
             type: "POST",
             url: "/odata/Texts",
