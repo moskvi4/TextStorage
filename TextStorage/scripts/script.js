@@ -24,7 +24,7 @@
             });
             $("#searchResultsList > li").on("click", function () {
                 loadSingleText(this.id.substring(5), function (text) {
-                    $("#textContent").text(text.TextContent);
+                    $("#textContent").html(text.TextContent);
                 });
             });
         });
@@ -58,7 +58,9 @@
         ajaxRequest.done(function (xhr, textStatus) {
             alert(textStatus);
             $("#newTextName").val("");
-            $("#textUpload").val("");            
+            $("#textUpload").val("");
+            var name = $("#textName").val();
+            loadTextsList(name);
         });
     });
     $("#searchTextButton").on("click", function () {
