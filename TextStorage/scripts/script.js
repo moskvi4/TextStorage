@@ -8,6 +8,12 @@
             callback(text);
         });
     }
+    function showTermDescriptionsList(termId) {
+        $("#termDescriptionsContainer").show();
+    }
+    $("#hideTermDescriptionsContainer").on("click", function () {
+        $("#termDescriptionsContainer").hide();
+    });
     function loadTextsList(name) {
         clearTextsList();
         var url = "/odata/Texts";
@@ -25,6 +31,9 @@
             $("#searchResultsList > li").on("click", function () {
                 loadSingleText(this.id.substring(5), function (text) {
                     $("#textContent").html(text.TextContent);
+                    $(".textContent > span").on("click", function () {
+                        showTermDescriptionsList(this.id.substring(5));
+                    });
                 });
             });
         });

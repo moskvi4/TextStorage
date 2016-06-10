@@ -63,3 +63,55 @@
     color: blue;
     cursor: pointer;
 }
+
+#termDescriptionsContainer {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 200px;
+	min-height: 400px;
+	min-width: 600px;
+	display: none;
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+}
+
+#termDescriptionsInnerContainer {
+	background: lightblue;
+	padding: 20px;
+}
+
+#termDescriptionsInnerContainer .termDescription {
+	border-bottom: blue solid 1px;
+	padding-bottom: 5px;
+}
+
+#hideTermDescriptionsContainer {
+	float: right;
+}
+
+#hideTermDescriptionsContainer:hover {
+	color: red;
+    cursor: pointer;
+}
+
+.termDescriptionTextName:hover {
+	color: blue;
+    cursor: pointer;
+}
+
+.description {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.termDescriptionTextName {
+	padding-top: 5px;
+	display: block;
+	color: rgb(100, 100, 100);
+}

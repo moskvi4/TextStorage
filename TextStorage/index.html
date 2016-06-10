@@ -1,41 +1,60 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Text Storage</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <script src="scripts/libs/jquery-1.12.4.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <link rel="stylesheet" href="styles/main.css" />
+	<title>Text Storage</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	<script src="scripts/libs/jquery-1.12.4.min.js"></script>
+	<script src="scripts/script.js"></script>
+	<link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-    <div class="header div-group">
-        <p class="textName">
-            Text Storage
-        </p>
-    </div>
-    <div class="left div-group">        
-        <div class="newFileBlock">
-            <input type="file" id="textUpload" />
-            <label>
-                Text name:
+	<div class="header div-group">
+		<p class="textName">
+			Text Storage
+		</p>
+	</div>
+	<div class="left div-group">
+		<div class="newFileBlock">
+			<input type="file" id="textUpload" />
+			<label>
+				Text name:
                 <input name="newTextName" id="newTextName" />
-                <button name="loadNewText" id="loadNewTextButton">Upload</button>
-            </label>
-        </div>
-        <div class="searchBlock">
-            <label>
-                Text name:
+				<button name="loadNewText" id="loadNewTextButton">Upload</button>
+			</label>
+		</div>
+		<div class="searchBlock">
+			<label>
+				Text name:
                 <input name="textName" id="textName" />
-                <button name="searchTextNutton" id="searchTextButton">Search</button>
-            </label>
-        </div>
-        <div class="searchResultsBlock">
-            <ul id="searchResultsList" style="list-style-type:none"></ul>
-        </div>
-    </div>
-    <div class="right div-group">
-        <p class="textContent" id="textContent">
-        </p>
-    </div>
+				<button name="searchTextNutton" id="searchTextButton">Search</button>
+			</label>
+		</div>
+		<div class="searchResultsBlock">
+			<ul id="searchResultsList" style="list-style-type: none"></ul>
+		</div>
+	</div>
+	<div class="right div-group">
+		<p class="textContent" id="textContent">
+		</p>
+	</div>
+	<div id="termDescriptionsContainer">
+		<div id="termDescriptionsInnerContainer">
+			<div id="hideTermDescriptionsContainer">X</div>
+			<div id="termDescriptionsList">
+				<div class="termDescription">
+					<span class="termDescriptionTextName">fjaksdj fkjhasdjf</span>
+					<p class="description">hkjahds fkjhakjsdh fkjhas kdhfkahsd kfhaksdhf kahsd kfhaksdh fkja hsdkfhaskdh fkjahsdk hfdasfkhaks dhfkjha kjdhs fkhak hsd fkhasd kjhfkjahds fkjhaksdhf</p>
+				</div>
+				<div class="termDescription">
+					<span class="termDescriptionTextName">fjaksdj fkjhasdjf</span>
+					<p class="description">hkjahds fkjhakjsdh fkjhas kdhfkahsd kfhaksdhf kahsd kfhaksdh fkja hsdkfhaskdh fkjahsdk hfdasfkhaks dhfkjha kjdhs fkhak hsd fkhasd kjhfkjahds fkjhaksdhf</p>
+				</div>
+				<div class="termDescription">
+					<span class="termDescriptionTextName">fjaksdj fkjhasdjf</span>
+					<p class="description">hkjahds fkjhakjsdh fkjhas kdhfkahsd kfhaksdhf kahsd kfhaksdh fkja hsdkfhaskdh fkjahsdk hfdasfkhaks dhfkjha kjdhs fkhak hsd fkhasd kjhfkjahds fkjhaksdhf</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
